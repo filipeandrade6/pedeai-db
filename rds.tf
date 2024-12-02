@@ -88,7 +88,7 @@ resource "aws_db_instance" "rds-pg-clientes" {
   instance_class = "db.t3.micro"
   storage_type = "gp2"
   identifier = "fiap44-db-clientes"
-  db_name = "pedeai-clientes"
+  db_name = "pedeaiclientes"
   username = "pedeai"
   password = "senha1ABC"
   publicly_accessible = true
@@ -107,21 +107,21 @@ resource "aws_db_instance" "rds-pg-clientes" {
   depends_on = [aws_security_group.allow_node_group, aws_db_subnet_group.db_subnet_group]
 }
 
-resource "aws_db_instance" "rds-pg" {
+resource "aws_db_instance" "rds-pg-pedidos" {
   engine = "postgres"
   engine_version = "16"
   allocated_storage = 20
   instance_class = "db.t3.micro"
   storage_type = "gp2"
   identifier = "fiap44-db"
-  db_name = "pedeai"
+  db_name = "pedeaipedidos"
   username = "pedeai"
   password = "senha1ABC"
   publicly_accessible = true
   skip_final_snapshot = true
   
   tags =  {
-      Name = "fiap44-db"
+      Name = "fiap44-db-pedidos"
   }
 
   # Assign this instance to a specific VPC
