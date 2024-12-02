@@ -113,7 +113,7 @@ resource "aws_db_instance" "rds-pg-pedidos" {
   allocated_storage = 20
   instance_class = "db.t3.micro"
   storage_type = "gp2"
-  identifier = "fiap44-db"
+  identifier = "fiap44-db-pedidos"
   db_name = "pedeaipedidos"
   username = "pedeai"
   password = "senha1ABC"
